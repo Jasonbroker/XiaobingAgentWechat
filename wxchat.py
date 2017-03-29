@@ -36,15 +36,15 @@ def reply_my_friend(msg):
     if msg.type == 'Text':
         text = msg.text
         print(msg.raw.get('User').get('NickName') + text)
-        if text.find('展') >= 0:
+        if text.find('妍丽') >= 0 or text.find('展老师') != -1 or text.find('盐粒') != -1 or text.find('展展') != -1:
             text = '周正昌公告：对我的女神一切信息暂时屏蔽'
             my_friend.send(text)
         elif text.lower().find('goodbye') >= 0:
             my_friend.send('机器人将自动退出，👋')
             bot.stop()
-        elif text.find('李旭') >= 0:
-            my_friend.send('我造你是小萌旭')
-        elif text.find('我是') >= 0:
+        elif text == '我是李旭':
+            my_friend.send('我造你是小萌旭 c(･ェ･。)')
+        elif text.find('我是') == 0:
             my_friend.send('我不关心你是谁')
         else:
             xiao_bing.send(text)
